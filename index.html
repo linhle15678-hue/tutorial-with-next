@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebios AI 1.5 - Trợ lý AI của Ebios Game Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo">E</div>
+                <div class="logo-text">
+                    <h1>Ebios AI</h1>
+                    <span>Version 1.5</span>
+                </div>
+            </div>
+            
+            <div class="nav-section">
+                <h3 class="section-title">MAIN</h3>
+                <ul class="nav-list">
+                    <li class="nav-item active" data-section="chat">
+                        <i class="fas fa-comments"></i>
+                        <span>Chat AI</span>
+                    </li>
+                    <li class="nav-item" data-section="features">
+                        <i class="fas fa-star"></i>
+                        <span>Tính năng</span>
+                    </li>
+                    <li class="nav-item" data-section="history">
+                        <i class="fas fa-history"></i>
+                        <span>Lịch sử</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3 class="section-title">TÍNH NĂNG</h3>
+                <div class="features-grid">
+                    <div class="feature-tag">💻 Lập trình</div>
+                    <div class="feature-tag">🎮 Game Dev</div>
+                    <div class="feature-tag">📚 Học tập</div>
+                    <div class="feature-tag">🔍 Tra cứu</div>
+                    <div class="feature-tag">🤖 AI</div>
+                    <div class="feature-tag">🎨 Sáng tạo</div>
+                </div>
+            </div>
+            
+            <div class="nav-section" style="margin-top: auto;">
+                <h3 class="section-title">HỆ THỐNG</h3>
+                <ul class="nav-list">
+                    <li class="nav-item" id="clearHistory">
+                        <i class="fas fa-trash"></i>
+                        <span>Xóa lịch sử</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Thông tin</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="system-info">
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    <span>Gemini 1.5 Flash</span>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">
+                    Powered by Ebios Game Studio
+                </p>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="header-left">
+                    <h2>Ebios AI Assistant</h2>
+                    <p class="subtitle">Trợ lý AI thông minh của Ebios Game Studio - Phiên bản 1.5</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                        Chủ đề
+                    </button>
+                    <button class="btn btn-primary" id="newChat">
+                        <i class="fas fa-plus"></i>
+                        Chat mới
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Chat Section -->
+            <section id="chatSection" class="section-content">
+                <div class="chat-container">
+                    <div class="messages-container">
+                        <!-- Messages will be dynamically added here -->
+                    </div>
+                    
+                    <div class="input-container">
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="messageInput" 
+                                class="message-input" 
+                                placeholder="Nhập câu hỏi của bạn ở đây... (Nhấn Enter để gửi, Shift+Enter để xuống dòng)"
+                                rows="1"></textarea>
+                            <button class="btn btn-primary" id="sendButton">
+                                <i class="fas fa-paper-plane"></i>
+                                Gửi
+                            </button>
+                        </div>
+                        
+                        <div class="input-actions">
+                            <span class="quick-prompt" data-prompt="Anh có thể giải thích về AI và machine learning không?">
+                                🤖 AI là gì?
+                            </span>
+                            <span class="quick-prompt" data-prompt="Anh có thể giúp em viết code JavaScript không?">
+                                💻 Lập trình
+                            </span>
+                            <span class="quick-prompt" data-prompt="Anh có thể tư vấn về phát triển game không?">
+                                🎮 Game Dev
+                            </span>
+                            <span class="quick-prompt" data-prompt="Anh có thể giúp em học về [chủ đề] không?">
+                                📚 Học tập
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features Grid -->
+                <div class="features-section">
+                    <h3 class="features-title">Khám phá các tính năng của Ebios AI</h3>
+                    <div class="features-grid-main">
+                        <!-- Feature cards will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="featuresSection" class="section-content hidden">
+                <div class="features-full">
+                    <h2>Tất cả tính năng</h2>
+                    <!-- Full features list -->
+                </div>
+            </section>
+            
+            <!-- History Section -->
+            <section id="historySection" class="section-content hidden">
+                <div class="history-full">
+                    <h2>Lịch sử chat</h2>
+                    <!-- Chat history -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

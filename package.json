@@ -1,22 +1,29 @@
 {
-  "name": "tutorial-with-next",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ebios-ai-web",
+  "version": "1.5.0",
+  "description": "Web AI EbiosAI với Gemini-1.5-Flash",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "next": "^16.0.8"
+    "@google/generative-ai": "^0.13.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "@types/node": "^20.19.26",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3"
-  }
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "ai",
+    "gemini",
+    "ebios",
+    "chatbot",
+    "assistant"
+  ],
+  "author": "Ebios Game Studio",
+  "license": "MIT"
 }
